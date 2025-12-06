@@ -2,3 +2,5 @@
 *.ex
 
 __pycache__/
+
+.vscode/
