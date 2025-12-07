@@ -1,5 +1,5 @@
 from copy import deepcopy
-from functools import lru_cache
+from functools import cache, lru_cache
 import sys
 with open(sys.argv[1] if len(sys.argv) > 1 else sys.argv[0][-5:-3] + ".in") as file:
     data = file.readlines()
@@ -29,9 +29,8 @@ while r < R:
 print("Part 1:", p1)
 
 
-@lru_cache(None)
+@cache
 def step(r, c):
-    global p2
     if r == R-1:
         return 1
     if diagram[r+1][c] == '.':
